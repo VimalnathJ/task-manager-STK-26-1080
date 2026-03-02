@@ -3,7 +3,7 @@ API to run CRUD operations using NODE.js, Express and Mongoose Atlas
 
 ## Setup
 1. Clone repository => git clone
-2. Install dependencied => npm install
+2. Install dependencies => npm install
 3. Run => npm start
 
 ## GitHub setup
