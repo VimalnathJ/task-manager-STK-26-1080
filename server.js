@@ -14,8 +14,8 @@ connectDB();
 app.use("/", taskRoutes);
 
 //test api
-app.get("/", (req, resa) => {
-    resa.send("Task manager running");
+app.get("/", (req, res) => {
+    res.send("Task manager running");
 });
 
 //port
