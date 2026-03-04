@@ -25,7 +25,7 @@ const taskschema = new mongoose.Schema({
             values : ["low", "medium", "high"],
             message : "'low', 'medium' or 'high'"
         },
-        require : true
+        required : true
     },
 
     dueDate : {
