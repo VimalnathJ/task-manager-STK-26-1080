@@ -22,6 +22,27 @@ exports.getAllTasks = async (req, res) => {
     }
 };
 
+//get tasks by pages
+exports.getPages = async (req, res) => {
+    try{
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit);
+        const skip = (page - 1) * limit;
+        const totalTasks = await Task.countDocuments();
+
+        const tasks = await Task.find().skip(skip).limit(limit);
+
+        res.status(200).json(
+            {totalTasks,
+            "currentPage" : page,
+            tasks});
+    }
+
+    catch (error) {
+        res.status(500).json({message : error.message});
+    }
+};
+
 //get single task
 exports.getSingleTask = async (req, res) => {
     try{
